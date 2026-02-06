@@ -1,5 +1,5 @@
 {
-  "name": "apiinterface",
+  "name": "api-interface",
   "compatibility_date": "2026-02-06",
   "main": "worker.js",
   "assets": { "directory": "." }
