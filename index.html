@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Console</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>API Console</h1>
+        <p>
+          Personal console.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>Fetch</h2>
+        <p class="muted">
+          Enter username + key.
+        </p>
+        <label class="field">
+          <span>Username</span>
+          <input id="username" type="text" placeholder="Username" autocomplete="off" />
+        </label>
+        <label class="field">
+          <span>API Key</span>
+          <input id="apikey" type="password" placeholder="API key" autocomplete="off" />
+        </label>
+        <label class="field">
+          <span>Command</span>
+          <select id="command">
+            
+            <option value="profile">profile</option>
+            <option value="full">full</option>
+            <option value="stories">stories</option>
+            <option value="domain">domain</option>
+            <option value="following">following</option>
+            <option value="comments">comments</option>
+            <option value="account_info">account_info</option>
+          </select>
+        </label>
+
+        
+        <label class="field" id="extra-field" style="display: none;">
+          <span id="extra-label"></span>
+          <input id="extra" type="text" placeholder="" autocomplete="off" />
+        </label>
+        <div class="actions">
+          <button id="fetch-data">Fetch Data</button>
+          <button id="clear-data" class="secondary">Clear Data</button>
+        </div>
+        <p id="status" class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <h2>Import / Export</h2>
+        <div class="actions">
+          <label class="file-button">
+            Import JSON
+            <input id="import-file" type="file" accept="application/json" />
+          </label>
+          <button id="export-data" class="secondary">Export JSON</button>
+          
+          <button id="toggle-view" class="secondary" style="display: none;">Show Following</button>
+        </div>
+      </section>
+
+      <section class="card" id="json-section">
+        <h2>Preview</h2>
+        <div class="preview-meta">
+          <span id="record-count">No data loaded.</span>
+          <span id="last-updated"></span>
+        </div>
+        <pre id="data-preview" class="preview"></pre>
+        
+      </section>
+
+      
+      <section class="card" id="table-section" style="display: none;">
+        <h2>Following</h2>
+        <div class="preview-meta">
+          <span id="table-record-count"></span>
+          <span id="table-last-updated"></span>
+        </div>
+        <div class="actions">
+          <button id="export-csv" class="secondary">Export CSV</button>
+          
+          <button id="toggle-details" class="secondary" style="display: none;">Expand All</button>
+        </div>
+        <div id="table-container" class="table-container"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
